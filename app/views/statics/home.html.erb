@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="col-sm-12 col-md-5 col-md-offset-7 map-container">
+    <div id='map' class='dark'></div>
+  </div>
+
+  <div class="col-sm-12 col-md-7 photo-grid-container">
+    <div class="transitions-enabled stream" id="photo-grids">
+      <% Dir.foreach('app/assets/images').with_index do |img, idx| %>
+        <% next if img =~ /^[.]/ %>
+          <div class="box panel panel-default">
+            <%= link_to image_tag(img), "#" %>
+          </div>
+      <% end %>
+    </div>
+  </div>
+</div>
